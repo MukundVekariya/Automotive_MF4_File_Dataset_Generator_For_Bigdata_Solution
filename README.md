@@ -4,6 +4,17 @@ Automotive systems generate vast volumes of high-resolution, unstructured time-s
 
 This repository contains a script that generates dummy mf4 files mimicking high-resolution automotive measurement data. The data are generated at multiple sampling frequencies and include a variety of automotive signals (numeric and switch signals). These dummy files serve as a testbed for building data pipelines, warehouses, and advanced analytics solutions (such as Bigdata solution implementations).
 
+### Vehicle data set Hierarchy
+
+![Multiple Vehicles Diagram](images/3_veh_multiple.jpg)
+
+*Figure 2:* This diagram shows Data source and the folder structure:
+- **Vehicle Models:** Folders such as VEH_MOD_A, VEH_MOD_B, and VEH_MOD_C.
+- **Vehicle IDs:** Each model folder contains subfolders named with unique vehicle IDs (e.g., VEH_ID_A123456).
+- **Files:** Each subfolder contains multiple mf4 files corresponding to that vehicle.
+
+> **Note:** If the images are not visible in your Git repository viewer, please refer to the local `images` folder in the repository.
+
 ---
 
 ## What the Script Does
@@ -34,33 +45,17 @@ The raw dummy dataset is designed to resemble the unstructured time-series data 
 - **Multi-Frequency Sampling:**  
   The dataset contains signals sampled at multiple frequencies (0.1 Hz, 1 Hz, 10 Hz, and 100 Hz). This multi-frequency design reflects real-world data capture systems where some measurements are recorded at high frequencies (e.g., engine RPM) while others are recorded less frequently (e.g., ambient temperature).
 
+  ![Multiple Frequency Diagram](images/multiple_frequency_from_mf4_file.jpg)
+
+  *Figure 2:* This diagram illustrates how channels within an mf4 file are grouped by sampling frequency. Channels with the same frequency share a common time base, ensuring that despite varying sampling rates (0.1, 1, 10, 100 Hz), the data remains synchronized.
+
+
 - **Dataset Size:**  
   With the default parameters set as:
   - **Duration:** 600 seconds per file (10 minutes)
   - **Number of Files:** 12 files per vehicle
   - **Vehicle Models:** A, B, and C  
   the total generated dataset is approximately **11GB**. These parameters can be modified to suit your specific sample size and storage requirements.
-
----
-
-## Visual Overview
-
-### Multiple Frequency Groups in a Single mf4 File
-
-![Multiple Frequency Diagram](images/multiple_frequency_from_mf4_file.jpg)
-
-*Figure 1:* This diagram illustrates how channels within an mf4 file are grouped by sampling frequency. Channels with the same frequency share a common time base, ensuring that despite varying sampling rates (0.1, 1, 10, 100 Hz), the data remains synchronized.
-
-### Folder and Vehicle Hierarchy
-
-![Multiple Vehicles Diagram](images/3_veh_multiple.jpg)
-
-*Figure 2:* This diagram shows the folder structure:
-- **Vehicle Models:** Folders such as VEH_MOD_A, VEH_MOD_B, and VEH_MOD_C.
-- **Vehicle IDs:** Each model folder contains subfolders named with unique vehicle IDs (e.g., VEH_ID_A123456).
-- **Files:** Each subfolder contains multiple mf4 files corresponding to that vehicle.
-
-> **Note:** If the images are not visible in your Git repository viewer, please refer to the local `images` folder in the repository.
 
 ---
 
