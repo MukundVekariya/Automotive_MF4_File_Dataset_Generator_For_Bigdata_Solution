@@ -8,7 +8,7 @@ This repository contains a script that generates dummy mf4 files mimicking high-
 
 ![Multiple Vehicles Diagram](images/3_veh_multiple.jpg)
 
-*Figure 2:* This diagram shows Data source and the folder structure:
+*Figure 1:* This diagram shows Data source and the folder structure:
 - **Vehicle Models:** Folders such as VEH_MOD_A, VEH_MOD_B, and VEH_MOD_C.
 - **Vehicle IDs:** Each model folder contains subfolders named with unique vehicle IDs (e.g., VEH_ID_A123456).
 - **Files:** Each subfolder contains multiple mf4 files corresponding to that vehicle.
@@ -48,7 +48,8 @@ The raw dummy dataset is designed to resemble the unstructured time-series data 
   ![Multiple Frequency Diagram](images/multiple_frequency_from_mf4_file.jpg)
 
   *Figure 2:* This diagram illustrates how channels within an mf4 file are grouped by sampling frequency. Channels with the same frequency share a common time base, ensuring that despite varying sampling rates (0.1, 1, 10, 100 Hz), the data remains synchronized.
-
+  
+> **Note:** If the images are not visible in your Git repository viewer, please refer to the local `images` folder in the repository.
 
 - **Dataset Size:**  
   With the default parameters set as:
